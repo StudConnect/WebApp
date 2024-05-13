@@ -13,6 +13,14 @@ export interface ButtonProps {
   className?: string;
 }
 
+export interface InputProps {
+  label: string;
+  handleChange: () => void;
+  type?: string;
+  placeholder?: string;
+  name?: string
+}
+
 export interface PostProps {
   post: {
     id: number;
