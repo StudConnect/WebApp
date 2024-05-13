@@ -9,6 +9,7 @@ import { SiCodementor } from "react-icons/si";
 import { BsCalendar4Event } from "react-icons/bs";
 import { IoSettingsOutline } from "react-icons/io5";
 import { FiLogOut } from "react-icons/fi";
+import { useEffect, useState } from "react";
 
 const SideNav: React.FC = () => {
   const dispatch = useDispatch();
@@ -16,6 +17,24 @@ const SideNav: React.FC = () => {
   const onToggle = () => {
     dispatch(toggleSidenav(!sidenav));
   };
+  const [showLabels, setShowLabels] = useState<boolean>(true);
+  useEffect(() => {
+    const handleResize = () => {
+      // Check the window width and update the showLabels state accordingly
+      setShowLabels(window.innerWidth >= 768); // Adjust the breakpoint value as needed
+    };
+
+    // Add event listener for window resize events
+    window.addEventListener("resize", handleResize);
+
+    // Call handleResize initially to set the initial state
+    handleResize();
+
+    // Cleanup: remove event listener when component unmounts
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
   const RouteLinks = [
     {
       label: "Home",
@@ -69,15 +88,16 @@ const SideNav: React.FC = () => {
         <section className="w-full h-full flex-col gap-y-[40px] items-center inline-flex py-[26px] px-2 md:px-3">
           <section className="w-full h-full flex-col justify-between items-center inline-flex">
             <section className="" onClick={onToggle}>
-              <Logo type="long" />
+              <Logo />
             </section>
             <section className="w-full">
               <ul className="w-full flex flex-col gap-3">
                 {RouteLinks.map((item, i) => (
                   <li key={i}>
-                    <Link className="text-swhite transition-all hover:bg-bgray rounded-xl text-base p-3 gap-2 flex items-center" to={""}>
+                    <Link className={`text-swhite transition-all hover:bg-bgray rounded-xl p-3 gap-2 flex items-center ${showLabels ? "justify-left text-base" : "justify-center text-xl"}`} to={""}>
                       <span>{item.icon}</span>
-                      <span>{item.label}</span>
+                      {showLabels && (
+                        <span className={`hidden md:inline ${!showLabels ? "hidden" : ""}`}>{item.label}</span>)}
                     </Link>
                   </li>
                 ))}
@@ -87,9 +107,10 @@ const SideNav: React.FC = () => {
               <ul className="w-full flex flex-col gap-2">
                 {RouteBLinks.map((item, i) => (
                   <li key={i}>
-                    <Link className="text-swhite hover:bg-bgray rounded-xl text-base p-3 gap-2 flex items-center" to={""}>
+                    <Link className={`text-swhite transition-all hover:bg-bgray rounded-xl p-3 gap-2 flex items-center ${showLabels ? "justify-left text-base" : "justify-center text-xl"}`} to={""}>
                       <span>{item.icon}</span>
-                      <span>{item.label}</span>
+                      {showLabels && (
+                        <span className={`hidden md:inline ${!showLabels ? "hidden" : ""}`}>{item.label}</span>)}
                     </Link>
                   </li>
                 ))}

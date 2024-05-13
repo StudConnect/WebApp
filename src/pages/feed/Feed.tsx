@@ -1,6 +1,8 @@
 import NewPost from "../../components/common/newPost/NewPost"
 import Post from "../../components/common/post/Post"
 import avatar from "../../assets/images/horjet.jpg"
+import LiveEvents from "../../components/common/liveEvents/LiveEvents"
+import FollowSuggestion from "../../components/common/followSuggestion/FollowSuggestion"
 
 
 const Feed = () => {
@@ -59,17 +61,57 @@ const Feed = () => {
             #100DaysOfCybersecurity <br />`
         },
     ]
+
+    const events = [
+        {
+            speaker_profile_pic: avatar,
+            speaker_first_name: "Powell",
+            title: "Eradicating Students Mindset from Black out",
+            event_link: "/"
+        },
+        {
+            speaker_profile_pic: avatar,
+            speaker_first_name: "Powell",
+            title: "Eradicating Students Mindset from Black out",
+            event_link: "/"
+        },
+        {
+            speaker_profile_pic: avatar,
+            speaker_first_name: "Powell",
+            title: "Eradicating Students Mindset from Black out",
+            event_link: "/"
+        }
+    ]
+
+    const users = [
+        {
+            profile_pic: avatar,
+            full_name: "John carlson",
+            headline: "Optometry Student at Brentford",
+        },
+        {
+            profile_pic: avatar,
+            full_name: "Benedict Rosswell",
+            headline: "Optometry Student at Brentford",
+        },
+        {
+            profile_pic: avatar,
+            full_name: "Rose Charly",
+            headline: "Optometry Student at Brentford",
+        }
+    ]
     return (
-        <section className="w-full h-[89vh] md:px-10 px-4 py-2 flex gap-10">
-            <section className="h-full w-2/3 overflow-y-scroll">
+        <section className="w-full h-[89vh] md:px-10 px-4 py-2 md:flex md:gap-10">
+            <section className="h-full w-full md:w-2/3 overflow-y-scroll lg:px-16">
                 <NewPost />
                 {
                     posts.map((post, i) => (
                         <Post key={i} post={post} />))
                 }
             </section>
-            <section className="w-1/3 ">
-                
+            <section className="w-full hidden md:w-1/3 h-full overflow-y-scroll gap-10 md:flex flex-col">
+                <LiveEvents events={events} />
+                <FollowSuggestion users={users} />
             </section>
         </section>
     )

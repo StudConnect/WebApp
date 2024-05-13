@@ -1,39 +1,22 @@
-import { Link, useNavigate } from "react-router-dom";
-import { BsBell, BsList } from "react-icons/bs";
-import { ButtonBg } from "../buttons/Buttons";
-import { useDispatch, useSelector } from "react-redux";
-import { toggleSidenav } from "../../../features/unauth-features/ActionSlice";
+import { BsBell } from "react-icons/bs";
+import { useSelector } from "react-redux";
 import { RootState } from "../../../types/Interface";
 import avatar from "../../../assets/images/horjet.jpg"
 import { TfiHelpAlt } from "react-icons/tfi";
 
 const TopBar: React.FC = () => {
-  const dispatch = useDispatch();
+  // const dispatch = useDispatch();
   const { sidenav } = useSelector((state: RootState) => state.action);
   console.log(sidenav)
-  const navigate = useNavigate()
-  const onToggle = () => {
-    dispatch(toggleSidenav(!sidenav));
-  };
-  const navLinks = [
-    {
-      text: "Home",
-      link: "/",
-    },
-    {
-      text: "About",
-      link: "/",
-    },
-    {
-      text: "FAQs",
-      link: "/",
-    },
-  ];
+  // const navigate = useNavigate()
+  // const onToggle = () => {
+  //   dispatch(toggleSidenav(!sidenav));
+  // };
   return (
     <>
       <header className="md:px-10 px-4 bg-transparent bg-black border-b border-bgray">
-        <section className="w-full flex items-center gap-32 py-3">
-          <section className="hidden w-full md:block">
+        <section className="w-full flex items-center gap-4 md:gap-32 py-3">
+          <section className=" w-full">
             <input
               type="text"
               name="search"
@@ -42,7 +25,7 @@ const TopBar: React.FC = () => {
               autoComplete="off"
             />
           </section>
-          <section className="flex items-center gap-6">
+          <section className="flex items-center gap-4 md:gap-6">
             <section className="text-swhite text-xl cursor-pointer">
               <BsBell />
             </section>

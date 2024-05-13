@@ -2,6 +2,18 @@
 @tailwind components;
 @tailwind utilities;
 
+@font-face {
+  font-family: "Plus";
+  src: local("Plus"),
+    url("./assets/fonts/Plus_Jakarta_Sans/PlusJakartaSans-VariableFont_wght.ttf")
+      format("truetype");
+}
+
+.linear-gradient {
+  background-image: linear-gradient(142deg, #1c4cd0 0%, #761cd0 100%);
+  background-size: 100% auto;
+}
+
 /* Scroll-bar customization */
 
 /* width */
@@ -23,4 +35,28 @@
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
   background: #555;
+}
+
+.logo-container-long {
+  width: 150px; /* Default width for the logo container */
+}
+
+.logo-container-short {
+  width: 50px; /* Default width for the logo container */
+}
+
+.logo-container img {
+  width: 100%; /* Make sure the logo image fills its container */
+}
+
+@media screen and (max-width: 1024px) {
+  .logo-container.long {
+    display: none; /* Hide the long logo on smaller screens */
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .logo-container.short {
+    display: none; /* Hide the short logo on bigger screens */
+  }
 }

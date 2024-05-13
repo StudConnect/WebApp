@@ -12,10 +12,10 @@ const MainLayout = () => {
     <>
       <section className="overflow-hidden bg-black h-screen p-0 w-full flex">
         <section className="w-full flex">
-          <section className="w-[18%]">
+          <section className="hidden sm:block w-[18%]">
             <SideNav />
           </section>
-          <section className="w-[82%]">
+          <section className="w-full sm:w-[82%]">
             <TopBar />
             {outlet}
           </section>
