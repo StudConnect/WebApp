@@ -11,7 +11,7 @@ const NewPost: React.FC = () => {
                         <img className="w-full rounded-full" src={avatar} alt={avatar} />
                     </section>
                     <section>
-                        <span className='text-para text-sm md:text-base'>Share something today David.... </span>
+                        <span className='text-para text-sm md:text-base'>Share something David.... </span>
                     </section>
                 </section>
                 <section>
