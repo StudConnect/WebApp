@@ -6,12 +6,12 @@ const NewPost: React.FC = () => {
     return (
         <section className='w-full'>
             <section className='w-full flex items-center justify-between  border-b border-bgray py-5'>
-                <section className="flex items-center gap-3">
+                <section className="flex items-center gap-2">
                     <section className="w-[40px] h-[40px] rounded-full">
                         <img className="w-full rounded-full" src={avatar} alt={avatar} />
                     </section>
                     <section>
-                        <span className='text-para'>Share something today David.... </span>
+                        <span className='text-para text-sm md:text-base'>Share something today David.... </span>
                     </section>
                 </section>
                 <section>

@@ -10,7 +10,7 @@ const Post: React.FC<PostProps> = ({ post }) => {
     return (
         <section className='w-full  border-b border-bgray'>
             <section className='w-full flex items-center justify-between  py-5'>
-                <section className="flex items-center gap-3">
+                <section className="flex items-center gap-2">
                     <section className="w-[45px] h-[45px] rounded-full">
                         <img className="w-full rounded-full" src={post.profile_pic} alt={post.profile_pic} />
                     </section>
@@ -21,27 +21,27 @@ const Post: React.FC<PostProps> = ({ post }) => {
                     </section>
                 </section>
                 <section>
-                    <span className='text-swhite'>+ Follow</span>
+                    <span className='text-swhite text-xs md:text-sm'>+ Follow</span>
                 </section>
             </section>
-            <section className='text-swhite2 text-sm'
+            <section className='text-swhite2 text-xs md:text-sm'
                 dangerouslySetInnerHTML={{ __html: post.content }}>
             </section>
             <section className='w-full flex items-center gap-10 py-3'>
                 <section className='w-2/3 text-swhite2 flex items-center justify-between text-lg'>
                     <section className="flex items-center gap-1 cursor-pointer">
-                        <IoMdHeartEmpty /><span className='text-sm'>100</span>
+                        <IoMdHeartEmpty /><span className=' text-xs md:text-sm'>100</span>
                     </section>
                     <section className="flex items-center gap-1 cursor-pointer">
-                        <BiRepost /><span className='text-sm'>100</span>
+                        <BiRepost /><span className=' text-xs md:text-sm'>100</span>
                     </section>
                     <section className="flex items-center gap-1 cursor-pointer">
-                        <GoCommentDiscussion /><span className='text-sm'>100</span>
+                        <GoCommentDiscussion /><span className=' text-xs md:text-sm'>100</span>
                     </section>
                 </section>
                 <section className='w-1/3 text-swhite2 justify-end flex'>
                     <section className="flex items-center gap-1 cursor-pointer">
-                        <IoBookmarkOutline /><span className='text-sm'>100</span>
+                        <IoBookmarkOutline /><span className=' text-xs md:text-sm'>100</span>
                     </section>
                 </section>
             </section>
