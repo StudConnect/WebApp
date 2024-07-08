@@ -16,27 +16,27 @@ const BottomNav = () => {
     },
     {
       label: "Search",
-      link: "/",
+      link: "/search",
       icon: <GoSearch className={iconStyles} />
     },
     {
       label: "Groups",
-      link: "/",
+      link: "/groups",
       icon: <GrGroup className={iconStyles} />
     },
     {
       label: "Resources",
-      link: "/",
+      link: "/resources",
       icon: <GrResources className={iconStyles} />
     },
     {
       label: "Mentors",
-      link: "/",
+      link: "/mentors",
       icon: <SiCodementor className={iconStyles} />
     },
     {
       label: "Events",
-      link: "/",
+      link: "/events",
       icon: <BsCalendar4Event className={iconStyles} />
     },
   ]
