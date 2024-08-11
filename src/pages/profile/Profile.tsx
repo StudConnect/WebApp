@@ -1,105 +1,13 @@
 import FollowSuggestion from "../../components/common/followSuggestion/FollowSuggestion";
 import LiveEvents from "../../components/common/liveEvents/LiveEvents";
-import avatar from "../../assets/images/horjet.jpg";
 import { FaArrowLeft } from "react-icons/fa";
 import { ButtonBg } from "../../components/shared/buttons/Buttons";
-import { Link as RouterLink, useLocation } from "react-router-dom";
+import { Link as RouterLink, useLocation, useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
 import Post from "../../components/common/post/Post";
+import { events, posts, users } from "../../utils/DummyData";
 
 const Profile = () => {
-    const posts = [
-        {
-            id: 1,
-            profile_pic: avatar,
-            full_name: "John Carlson",
-            headline: "Optometry Student at Brentford",
-            posted: "4d",
-            content: `Day 68-74/100. <br />
-            Week 6 ✅ <br /><br />
-
-            ✏️ IoT Fundamentals: IoT Security Course Completed! <br /><br />
-
-            I'm excited to share that I recently completed the IoT Security course offered by Cisco Networking Academy. <br /><br />`
-        },
-        {
-            id: 2,
-            profile_pic: avatar,
-            full_name: "Benedict Rosswell",
-            headline: "Optometry Student at Brentford",
-            posted: "1d",
-            content: `Through this comprehensive course, I gained in-depth knowledge of: <br /><br />
-
-            - IoT Systems and Architectures <br />
-            - The IoT Device Layer Attack <br />
-            - IoT Application Layer Attack Surface <br />
-            - Vulnerability and Risk Assessment in an IoT System <br /><br />`
-        },
-        {
-            id: 3,
-            profile_pic: avatar,
-            full_name: "Rose Charly",
-            headline: "Optometry Student at Brentford",
-            posted: "3w",
-            content: `🔹 I understood that IoT security is crucial to prevent attacks on devices, data, and applications, and to ensure the reliability and trustworthiness of IoT systems. <br /><br />
-
-            🔹I learnt how to identify and mitigate vulnerabilities, assess risks, and implement effective security measures to safeguard IoT ecosystems. <br /><br />
-
-            🔹 I also gained a deeper understanding of the importance of secure device provisioning, data encryption, and authentication, as well as the need for continuous monitoring and threat analysis. <br /><br />
-
-            🔹Additionally, I learnt about the various IoT security standards, frameworks, and best practices that can help organizations ensure the security and privacy of their IoT devices and systems. <br /><br />`
-        },
-        {
-            id: 4,
-            profile_pic: avatar,
-            full_name: "Mikel Jordan",
-            headline: "Optometry Student at Brentford",
-            posted: "2d",
-            content: `A big thank you to Confidence Staveley, CyberSafe Foundation, for providing this course, I'm super grateful! <br /><br />
-
-            #CyberGirls2024 #IoTSecurity <br />
-            #ProudCyberGirl #InternetOfThings <br />
-            #100DaysOfCybersecurity <br />`
-        },
-    ]
-    const events = [
-        {
-            speaker_profile_pic: avatar,
-            speaker_first_name: "Powell",
-            title: "Eradicating Students Mindset from Black out",
-            event_link: "/",
-        },
-        {
-            speaker_profile_pic: avatar,
-            speaker_first_name: "Powell",
-            title: "Eradicating Students Mindset from Black out",
-            event_link: "/",
-        },
-        {
-            speaker_profile_pic: avatar,
-            speaker_first_name: "Powell",
-            title: "Eradicating Students Mindset from Black out",
-            event_link: "/",
-        },
-    ];
-
-    const users = [
-        {
-            profile_pic: avatar,
-            full_name: "John Carlson",
-            headline: "Optometry Student at Brentford",
-        },
-        {
-            profile_pic: avatar,
-            full_name: "Benedict Rosswell",
-            headline: "Optometry Student at Brentford",
-        },
-        {
-            profile_pic: avatar,
-            full_name: "Rose Charly",
-            headline: "Optometry Student at Brentford",
-        },
-    ];
 
     const navLinks = [
         {
@@ -132,6 +40,8 @@ const Profile = () => {
     }, [location.pathname, location.hash]);
 
     console.log(activeLink);
+
+    const navigate = useNavigate()
 
     const renderContent = () => {
         switch (activeLink) {
@@ -187,7 +97,7 @@ const Profile = () => {
                     <section className="bg-black py-5">
                         <section className="w-full flex justify-end">
                             <section className="w-fit justify-end">
-                                <ButtonBg className="py-2 px-2">Edit profile</ButtonBg>
+                                <ButtonBg onClick={() => navigate("/settings/account")} className="py-2 px-3">Edit profile</ButtonBg>
                             </section>
                         </section>
                         <section className="mb-3">

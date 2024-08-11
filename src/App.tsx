@@ -14,6 +14,10 @@ import Resources from "./pages/resources/Resources";
 import Mentors from "./pages/mentors/Mentors";
 import Events from "./pages/events/Events";
 import Profile from "./pages/profile/Profile";
+import Settings from "./pages/settings/Settings";
+import ProfileSettings from "./pages/profileSettings/ProfileSettings";
+import Wallet from "./pages/wallet/Wallet";
+import History from "./pages/history/History";
 
 const App = () => {
 
@@ -28,6 +32,10 @@ const App = () => {
           <Route path="/mentors" element={<Mentors />} />
           <Route path="/events" element={<Events />} />
           <Route path="/profile" element={<Profile />} />
+          <Route path="/settings" element={<Settings />} />
+          <Route path="/settings/account" element={<ProfileSettings />} />
+          <Route path="/wallet" element={<Wallet />} />
+          <Route path="/wallet/history" element={<History />} />
         </Route>
       </>
     )

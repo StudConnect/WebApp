@@ -8,7 +8,7 @@ export interface RootState {
 
 export interface ButtonProps {
   children: string;
-  onClick?: () => void;
+  onClick?: any;
   disabled?: boolean;
   className?: string;
 }
@@ -17,6 +17,15 @@ export interface InputProps {
   label: string;
   handleChange: () => void;
   type?: string;
+  placeholder?: string;
+  name?: string
+}
+
+export interface SelectProps {
+  label?: string;
+  handleChange: () => void;
+  type?: string;
+  options?: any;
   placeholder?: string;
   name?: string
 }
@@ -31,6 +40,21 @@ export interface PostProps {
     content: string;
   };
 }
+
+export interface ResourceProps {
+  resource: {
+    displayImage: string;
+    author: {
+      firstName: string;
+      lastName: string;
+      profilePic: string;
+    };
+    title: string;
+    type: string;
+    url: string;
+  };
+}
+
 
 export interface EventProps {
   events: {
@@ -47,5 +71,27 @@ export interface UserFollowProps {
     full_name: string;
     headline: string;
   }[];
+}
+
+export interface MentorBoxProps {
+  profilePic: string;
+  firstName: string;
+  lastName: string;
+  school: string;
+  course: string;
+  noOfMentees: number;
+  noOfConnections: number;
+  rating: number;
+  onApply: () => void;
+}
+
+export interface TextAreaProps {
+  label: string;
+  handleChange: () => void;
+  type?: string;
+  placeholder?: string;
+  name?: string;
+  cols?: number;
+  rows?: number;
 }
 

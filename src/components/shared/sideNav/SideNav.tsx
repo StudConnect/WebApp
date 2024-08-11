@@ -74,7 +74,7 @@ const SideNav: React.FC = () => {
   const RouteBLinks = [
     {
       label: "Settings",
-      link: "/profile",
+      link: "/settings",
       icon: <IoSettingsOutline />,
     },
     {
