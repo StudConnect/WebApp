@@ -7,7 +7,7 @@ export interface RootState {
 }
 
 export interface ButtonProps {
-  children: string;
+  children: any;
   onClick?: any;
   disabled?: boolean;
   className?: string;

@@ -4,7 +4,7 @@ import { ResourceProps } from '../../../types/Interface';
 
 const Resource: React.FC<ResourceProps> = ({ resource }) => {
     return (
-        <section className='shadow-xl rounded-3xl bg-gray p-5 relative group'>
+        <section className='bg-bgray rounded-3xl bg-gray p-2 relative group'>
             <section className='relative'>
                 <section className='z-10 absolute left-3 top-3 bg-[#14141F] text-white flex items-center gap-1 px-3 py-2 text-xs rounded-xl'>
                     <FaRegHeart /> <span>34</span>

@@ -2,11 +2,13 @@ import { FaArrowLeft } from "react-icons/fa"
 import { ButtonBg } from "../../components/shared/buttons/Buttons"
 import { CustomInput } from "../../components/shared/inputs/CustomInput"
 import { CustomTextArea } from "../../components/shared/inputs/CustomTextArea"
+import { useNavigate } from "react-router-dom"
 
 const ProfileSettings = () => {
     function handleChange(): void {
         throw new Error("Function not implemented.")
     }
+    const navigate = useNavigate()
 
     return (
         <section className="w-full h-[89vh] md:px-10 px-4 py-2 md:flex md:gap-10">
@@ -15,7 +17,7 @@ const ProfileSettings = () => {
                 <section className='w-full h-full p-4 overflow-y-scroll pb-20'>
                     <section className='mb-5 flex items-center gap-5'>
                         <section className="cursor-pointer text-white">
-                            <FaArrowLeft />
+                            <FaArrowLeft onClick={() => navigate(-1)} />
                         </section>
                         <section className='text-left py-4'>
                             <h2 className='text-2xl tracking-wide text-swhite font-bold'>Account Details</h2>

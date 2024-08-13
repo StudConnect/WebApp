@@ -72,7 +72,7 @@ const Profile = () => {
             <section className="h-full w-full md:w-2/3 overflow-y-scroll lg:px-5">
                 <section className="flex text-swhite items-center py-3 gap-10">
                     <section className="cursor-pointer">
-                        <FaArrowLeft />
+                        <FaArrowLeft onClick={() => navigate(-1)} />
                     </section>
                     <section className="leading-3">
                         <h3 className="text-lg font-semibold">David Horjet 🏂</h3>

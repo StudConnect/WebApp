@@ -14,7 +14,7 @@ const MentorBox: React.FC<MentorBoxProps> = ({
     rating,
 }) => {
     return (
-        <section className="bg-gray-800 p-5 rounded-lg shadow-lg mb-4 flex flex-col items-center">
+        <section className="bg-bgray p-5 rounded-lg shadow-lg mb-4 flex flex-col items-center">
             <img className="w-24 h-24 rounded-full" src={profilePic} alt={`${firstName} ${lastName}`} />
             <h3 className="text-white text-xl font-semibold mt-3">{`${firstName} ${lastName}`}</h3>
             <p className="text-gray-400 mt-1">{school}</p>
@@ -30,7 +30,7 @@ const MentorBox: React.FC<MentorBoxProps> = ({
                 </section>
             </section>
             <Rating rating={rating} />
-            <ButtonBg className='bg-bc px-5 py-2'>
+            <ButtonBg className='bg-para px-5 py-3'>
                 Apply for Mentorship
             </ButtonBg>
         </section>
